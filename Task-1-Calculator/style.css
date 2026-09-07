@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #0f172a;
+    --calculator: #111827;
+    --display: #020617;
+    --key: #1e293b;
+    --key-hover: #334155;
+    --operator: #312e81;
+    --operator-hover: #4338ca;
+    --equals: #16a34a;
+    --equals-hover: #15803d;
+    --danger: #7f1d1d;
+    --danger-hover: #991b1b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #1e293b 0,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #172554 0,
+            transparent 35%
+        ),
+        var(--bg);
+
+    color: var(--text);
+}
+
+button {
+    font: inherit;
+}
+
+.calculator-wrapper {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 390px;
+
+    padding: 22px;
+
+    background: rgba(17, 24, 39, 0.92);
+
+    border: 1px solid var(--border);
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(18px);
+}
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.brand {
+    color: #818cf8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.calculator-header h1 {
+    margin-top: 3px;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.level-badge {
+    padding: 7px 11px;
+
+    border: 1px solid rgba(129, 140, 248, 0.25);
+    border-radius: 999px;
+
+    background: rgba(99, 102, 241, 0.12);
+
+    color: #a5b4fc;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.display-container {
+    min-height: 125px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 20px;
+
+    margin-bottom: 16px;
+
+    border-radius: 20px;
+
+    background: var(--display);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+}
+
+.previous-display {
+    min-height: 24px;
+
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    text-align: right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.display {
+    min-height: 48px;
+
+    color: var(--text);
+
+    font-size: clamp(32px, 8vw, 46px);
+    font-weight: 600;
+
+    line-height: 1.1;
+    text-align: right;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.keypad {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.key {
+    min-height: 62px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: var(--key);
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.key:hover {
+    background: var(--key-hover);
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+.key:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+}
+
+.key-operator {
+    background: var(--operator);
+}
+
+.key-operator:hover {
+    background: var(--operator-hover);
+}
+
+.key-clear {
+    background: var(--danger);
+}
+
+.key-clear:hover {
+    background: var(--danger-hover);
+}
+
+.key-delete {
+    color: #fca5a5;
+}
+
+.key-equals {
+    grid-row: span 2;
+
+    background: var(--equals);
+}
+
+.key-equals:hover {
+    background: var(--equals-hover);
+}
+
+.key-zero {
+    grid-column: span 2;
+}
+
+.calculator-footer {
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Tablet / Mobile */
+@media (max-width: 480px) {
+    .calculator-wrapper {
+        padding: 14px;
+    }
+
+    .calculator {
+        padding: 17px;
+        border-radius: 23px;
+    }
+
+    .key {
+        min-height: 58px;
+        border-radius: 14px;
+    }
+
+    .display-container {
+        min-height: 115px;
+        padding: 17px;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 350px) {
+    .calculator {
+        padding: 13px;
+    }
+
+    .keypad {
+        gap: 7px;
+    }
+
+    .key {
+        min-height: 53px;
+        font-size: 18px;
+    }
+
+    .calculator-header h1 {
+        font-size: 21px;
+    }
+}

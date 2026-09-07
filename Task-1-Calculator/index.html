@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="A professional responsive calculator built with HTML, CSS and Vanilla JavaScript."
+    >
+
+    <title>Calculator | OIBSIP Level 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="calculator-wrapper">
+
+        <section class="calculator" aria-label="Calculator">
+
+            <div class="calculator-header">
+                <div>
+                    <p class="brand">OIBSIP</p>
+                    <h1>Calculator</h1>
+                </div>
+
+                <span class="level-badge">Level 2</span>
+            </div>
+
+            <div class="display-container">
+                <div
+                    id="previous-display"
+                    class="previous-display"
+                    aria-label="Previous calculation"
+                ></div>
+
+                <div
+                    id="display"
+                    class="display"
+                    aria-label="Calculator display"
+                >
+                    0
+                </div>
+            </div>
+
+            <div class="keypad">
+
+                <button
+                    class="key key-clear"
+                    data-action="clear"
+                    type="button"
+                >
+                    C
+                </button>
+
+                <button
+                    class="key key-delete"
+                    data-action="delete"
+                    type="button"
+                    aria-label="Delete last character"
+                >
+                    ⌫
+                </button>
+
+                <button
+                    class="key key-operator"
+                    data-operator="÷"
+                    type="button"
+                >
+                    ÷
+                </button>
+
+                <button
+                    class="key key-operator"
+                    data-operator="×"
+                    type="button"
+                >
+                    ×
+                </button>
+
+                <button class="key" data-number="7" type="button">7</button>
+                <button class="key" data-number="8" type="button">8</button>
+                <button class="key" data-number="9" type="button">9</button>
+
+                <button
+                    class="key key-operator"
+                    data-operator="−"
+                    type="button"
+                >
+                    −
+                </button>
+
+                <button class="key" data-number="4" type="button">4</button>
+                <button class="key" data-number="5" type="button">5</button>
+                <button class="key" data-number="6" type="button">6</button>
+
+                <button
+                    class="key key-operator"
+                    data-operator="+"
+                    type="button"
+                >
+                    +
+                </button>
+
+                <button class="key" data-number="1" type="button">1</button>
+                <button class="key" data-number="2" type="button">2</button>
+                <button class="key" data-number="3" type="button">3</button>
+
+                <button
+                    class="key key-equals"
+                    data-action="equals"
+                    type="button"
+                >
+                    =
+                </button>
+
+                <button
+                    class="key key-zero"
+                    data-number="0"
+                    type="button"
+                >
+                    0
+                </button>
+
+                <button
+                    class="key"
+                    data-number="."
+                    type="button"
+                >
+                    .
+                </button>
+
+            </div>
+
+            <p class="calculator-footer">
+                Built with HTML5, CSS3 & Vanilla JavaScript
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
