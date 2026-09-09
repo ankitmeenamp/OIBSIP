@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | SecureAuth</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <main class="auth-page">
+
+    <section class="auth-card">
+
+      <div class="brand">
+        <div class="brand-icon">S</div>
+
+        <div>
+          <h1>SecureAuth</h1>
+          <p>Welcome back</p>
+        </div>
+      </div>
+
+      <div class="auth-heading">
+        <h2>Sign in to your account</h2>
+        <p>Enter your details to continue</p>
+      </div>
+
+      <% if (error) { %>
+        <div class="alert alert-error">
+          <span>!</span>
+          <%= error %>
+        </div>
+      <% } %>
+
+      <% if (success) { %>
+        <div class="alert alert-success">
+          <span>✓</span>
+          <%= success %>
+        </div>
+      <% } %>
+
+      <form action="/login" method="POST" class="auth-form">
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+
+          <div class="label-row">
+            <label for="password">Password</label>
+          </div>
+
+          <div class="password-wrapper">
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              data-target="password"
+            >
+              Show
+            </button>
+
+          </div>
+        </div>
+
+        <button type="submit" class="primary-btn">
+          Sign In
+          <span>→</span>
+        </button>
+
+      </form>
+
+      <div class="divider">
+        <span>New here?</span>
+      </div>
+
+      <a href="/register" class="secondary-btn">
+        Create an account
+      </a>
+
+    </section>
+
+    <p class="copyright">
+      © 2026 SecureAuth · OIBSIP Level 2 Task 4
+    </p>
+
+  </main>
+
+  <script src="/js/script.js"></script>
+
+</body>
+</html>

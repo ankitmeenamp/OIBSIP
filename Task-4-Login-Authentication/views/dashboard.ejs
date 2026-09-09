@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard | SecureAuth</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <div class="dashboard-page">
+
+    <header class="dashboard-header">
+
+      <div class="dashboard-brand">
+        <div class="brand-icon">S</div>
+
+        <div>
+          <h1>SecureAuth</h1>
+          <span>Dashboard</span>
+        </div>
+      </div>
+
+      <form action="/logout" method="POST">
+        <button class="logout-btn" type="submit">
+          Logout
+        </button>
+      </form>
+
+    </header>
+
+    <main class="dashboard-content">
+
+      <section class="welcome-card">
+
+        <div class="welcome-content">
+
+          <span class="welcome-label">
+            AUTHENTICATED USER
+          </span>
+
+          <h2>
+            Welcome, <%= user.name %> 👋
+          </h2>
+
+          <p>
+            You have successfully logged into your secure account.
+          </p>
+
+        </div>
+
+        <div class="check-icon">
+          ✓
+        </div>
+
+      </section>
+
+      <section class="dashboard-grid">
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            👤
+          </div>
+
+          <div>
+            <span class="info-label">FULL NAME</span>
+            <h3><%= user.name %></h3>
+          </div>
+
+        </div>
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            ✉
+          </div>
+
+          <div>
+            <span class="info-label">EMAIL ADDRESS</span>
+            <h3><%= user.email %></h3>
+          </div>
+
+        </div>
+
+        <div class="info-card">
+
+          <div class="info-icon">
+            🔒
+          </div>
+
+          <div>
+            <span class="info-label">ACCOUNT STATUS</span>
+            <h3 class="status">
+              <span></span>
+              Active
+            </h3>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="security-card">
+
+        <div class="security-icon">
+          🔐
+        </div>
+
+        <div>
+          <h3>Your account is protected</h3>
+
+          <p>
+            Your password is securely hashed using bcrypt
+            before being stored in the database.
+          </p>
+        </div>
+
+      </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+      OIBSIP Level 2 · Task 4 — Login Authentication System
+    </footer>
+
+  </div>
+
+</body>
+</html>
