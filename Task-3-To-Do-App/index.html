@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A responsive task management To-Do web application built with HTML, CSS and Vanilla JavaScript."
+    >
+
+    <title>TaskFlow | OIBSIP Level 2</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="app-header">
+
+            <div>
+                <p class="eyebrow">OIBSIP · LEVEL 2 · TASK 3</p>
+
+                <h1>
+                    Task<span>Flow</span>
+                </h1>
+
+                <p class="subtitle">
+                    Organize your day. Get things done.
+                </p>
+            </div>
+
+            <div class="date-box">
+                <span id="current-day">Today</span>
+                <strong id="current-date"></strong>
+            </div>
+
+        </header>
+
+
+        <!-- Add Task -->
+        <section class="add-task-card">
+
+            <form id="task-form">
+
+                <div class="input-wrapper">
+
+                    <label for="task-input" class="sr-only">
+                        Enter a task
+                    </label>
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What needs to be done?"
+                        maxlength="120"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="add-button"
+                >
+                    <span>+</span>
+                    Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span class="stat-icon">○</span>
+
+                <div>
+                    <strong id="pending-count">0</strong>
+                    <span>Pending</span>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card completed-stat">
+
+                <span class="stat-icon">✓</span>
+
+                <div>
+                    <strong id="completed-count">0</strong>
+                    <span>Completed</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task Lists -->
+        <section class="task-section">
+
+            <!-- Pending Tasks -->
+            <div class="list-container">
+
+                <div class="list-header">
+
+                    <div>
+                        <span class="list-label">
+                            IN PROGRESS
+                        </span>
+
+                        <h2>Pending Tasks</h2>
+                    </div>
+
+                    <span
+                        class="list-count"
+                        id="pending-badge"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="pending-list"
+                    class="task-list"
+                ></div>
+
+            </div>
+
+
+            <!-- Completed Tasks -->
+            <div class="list-container completed-container">
+
+                <div class="list-header">
+
+                    <div>
+                        <span class="list-label">
+                            FINISHED
+                        </span>
+
+                        <h2>Completed Tasks</h2>
+                    </div>
+
+                    <span
+                        class="list-count completed-badge"
+                        id="completed-badge"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="completed-list"
+                    class="task-list"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <p>
+                Built with HTML5, CSS3 & Vanilla JavaScript
+            </p>
+
+            <button
+                id="clear-completed"
+                class="clear-completed"
+                type="button"
+            >
+                Clear completed
+            </button>
+
+        </footer>
+
+    </main>
+
+
+    <!-- Edit Modal -->
+    <div
+        id="edit-modal"
+        class="modal hidden"
+        aria-hidden="true"
+    >
+
+        <div class="modal-content">
+
+            <button
+                id="close-modal"
+                class="modal-close"
+                type="button"
+                aria-label="Close edit window"
+            >
+                ×
+            </button>
+
+            <p class="eyebrow">EDIT TASK</p>
+
+            <h2>Update your task</h2>
+
+            <form id="edit-form">
+
+                <label for="edit-input">
+                    Task name
+                </label>
+
+                <input
+                    type="text"
+                    id="edit-input"
+                    maxlength="120"
+                    autocomplete="off"
+                >
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-edit"
+                        class="cancel-button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        Save Changes
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
