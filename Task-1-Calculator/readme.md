@@ -1,4 +1,4 @@
-# 🧮 OIBSIP Level 2 - Task 1 Calculator
+# 🧮 OIBSIP Level 2 :- Task 1 Calculator
 
 A professional and responsive calculator web application built as part of the Oasis Infobyte Internship Program (OIBSIP).
 
